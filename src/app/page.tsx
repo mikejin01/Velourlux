@@ -60,7 +60,7 @@ const trendingShadesData = [
     name: "Desert – Earth",
     type: "Flatweave Jute & Wool Rug",
     price: "$395.00",
-    image: "/Velourlux/images/rug-ochre.png",
+    image: "/Velourlux/images/Electric Rolling Curtain-1.avif",
   },
   {
     name: "Velvet Royal – Wine",
