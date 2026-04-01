@@ -827,41 +827,10 @@ h3 {
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* ---------- Tablet (≤ 1024px) ---------- */
 @media (max-width: 1024px) {
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .hero-image {
-    aspect-ratio: 4/3;
-    order: -1;
-  }
-
-  .hero-content {
-    padding: 48px 24px;
-    justify-content: flex-start;
-  }
-
-  .campaign-grid,
-  .curtains-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-card {
-    flex: 0 0 calc(50% - 8px);
-    min-width: 240px;
-  }
-
-  .footer-columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .press-logos {
-    justify-content: center;
-    gap: 24px 40px;
-  }
-
+  /* --- Header --- */
   .header-nav {
     display: none;
   }
@@ -870,31 +839,341 @@ h3 {
   .header-right > span {
     display: none;
   }
+
+  .header-left {
+    gap: 24px;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-image {
+    aspect-ratio: 16/10;
+    order: -1;
+  }
+
+  .hero-content {
+    padding: 40px 24px 48px;
+    justify-content: flex-start;
+  }
+
+  /* --- Product Carousels --- */
+  .trending-section {
+    padding: 60px 0 48px;
+  }
+
+  .product-card {
+    flex: 0 0 calc(50% - 8px);
+    min-width: 240px;
+  }
+
+  /* --- Featured Campaign (Liam Linen) --- */
+  .featured-campaign {
+    padding: 48px 0 60px;
+  }
+
+  .campaign-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .campaign-text {
+    order: 1;
+    padding: 32px 24px 24px;
+  }
+
+  .campaign-lifestyle {
+    order: 2;
+    height: 56vw;
+    min-height: 280px;
+  }
+
+  .campaign-product-col {
+    order: 3;
+  }
+
+  .campaign-product-isolated {
+    min-height: 300px;
+  }
+
+  /* --- Curtains Featured (Roman Shades) --- */
+  .curtains-featured {
+    padding: 48px 0 60px;
+  }
+
+  .curtains-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .curtains-lifestyle {
+    order: 1;
+    height: 56vw;
+    min-height: 280px;
+  }
+
+  .curtains-product-col {
+    order: 2;
+  }
+
+  .curtains-product-isolated {
+    min-height: 300px;
+  }
+
+  .curtains-text {
+    order: 3;
+    padding: 32px 24px 0;
+  }
+
+  /* --- Press --- */
+  .press-section {
+    padding: 48px 0 60px;
+  }
+
+  .press-logos {
+    justify-content: center;
+    gap: 24px 40px;
+    margin-bottom: 48px;
+  }
+
+  /* --- Community --- */
+  .community-section {
+    padding: 48px 0 60px;
+  }
+
+  /* --- Footer --- */
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    padding: 0 24px 40px;
+  }
+
+  .footer-logo-bg {
+    padding: 40px 0 28px;
+  }
 }
 
+/* ---------- Mobile (≤ 640px) ---------- */
 @media (max-width: 640px) {
+  /* --- Hero --- */
+  .hero-image {
+    aspect-ratio: 4/5;
+  }
+
+  .hero-content {
+    padding: 32px 20px 40px;
+  }
+
+  .hero-title {
+    margin-bottom: 16px;
+  }
+
+  .hero-desc {
+    font-size: 0.875rem;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* --- Section Headers --- */
+  .section-header {
+    padding: 0 20px;
+    margin-bottom: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* --- Product Carousels --- */
+  .trending-section {
+    padding: 48px 0 40px;
+  }
+
+  .carousel-track {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
   .product-card {
-    flex: 0 0 calc(75% - 8px);
-    min-width: 220px;
+    flex: 0 0 70%;
+    min-width: 200px;
+  }
+
+  /* --- Featured Campaign --- */
+  .featured-campaign {
+    padding: 40px 0 48px;
+  }
+
+  .campaign-grid {
+    padding: 0 20px;
+  }
+
+  .campaign-text {
+    padding: 28px 0 20px;
+  }
+
+  .campaign-lifestyle {
+    height: 75vw;
+    min-height: 260px;
+  }
+
+  .campaign-product-isolated {
+    min-height: 260px;
+  }
+
+  .campaign-desc {
+    font-size: 0.875rem;
+    max-width: 100%;
+  }
+
+  /* --- Curtains Featured --- */
+  .curtains-featured {
+    padding: 40px 0 48px;
+  }
+
+  .curtains-grid {
+    padding: 0 20px;
+  }
+
+  .curtains-lifestyle {
+    height: 75vw;
+    min-height: 260px;
+  }
+
+  .curtains-product-isolated {
+    min-height: 260px;
+  }
+
+  .curtains-text {
+    padding: 28px 0 0;
+  }
+
+  .curtains-desc {
+    font-size: 0.875rem;
+    max-width: 100%;
+  }
+
+  /* --- Press --- */
+  .press-section {
+    padding: 40px 0 48px;
+  }
+
+  .press-logos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 28px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+
+  .press-logo {
+    font-size: 1rem;
+  }
+
+  .press-content {
+    padding: 0 20px;
+    justify-content: flex-start;
+  }
+
+  .press-desc {
+    font-size: 0.9375rem;
+  }
+
+  /* --- Community --- */
+  .community-section {
+    padding: 40px 0 48px;
+  }
+
+  .community-header {
+    padding: 0 20px;
+    margin-bottom: 24px;
+  }
+
+  .community-grid {
+    gap: 12px;
+    padding: 0 20px;
   }
 
   .community-card {
-    flex: 0 0 calc(75% - 8px);
-    min-width: 220px;
+    flex: 0 0 72%;
+    min-width: 200px;
+  }
+
+  /* --- Footer --- */
+  .footer-logo-bg {
+    padding: 32px 0 24px;
+  }
+
+  .footer-logo-text {
+    font-size: 15vw;
   }
 
   .footer-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 20px;
+    padding: 0 20px 32px;
+  }
+
+  .footer-column a {
+    font-size: 0.8125rem;
+    margin-bottom: 8px;
+  }
+
+  .footer-newsletter-section {
+    padding: 0 20px 32px;
+  }
+
+  .footer-newsletter-section p {
+    font-size: 0.75rem;
+    margin-bottom: 16px;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 16px;
+    padding: 20px;
+    align-items: center;
   }
 
-  .press-logos {
-    flex-direction: column;
-    gap: 20px;
+  .footer-copyright {
+    font-size: 0.6875rem;
+  }
+}
+
+/* ---------- Small Phone (≤ 380px) ---------- */
+@media (max-width: 380px) {
+  .header-inner {
+    padding: 12px 16px;
+  }
+
+  .header-logo {
+    font-size: 1rem;
+  }
+
+  .header-icons {
+    gap: 14px;
+    margin-left: 8px;
+  }
+
+  .hero-content {
+    padding: 24px 16px 32px;
+  }
+
+  .product-card {
+    flex: 0 0 78%;
+  }
+
+  .community-card {
+    flex: 0 0 78%;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 16px;
+    padding: 0 16px 28px;
   }
 }
 
