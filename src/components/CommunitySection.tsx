@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useRef } from "react";
 
 const communityImages = [
-  { src: "/images/product-shutters.jpg", alt: "Elegant traditional room with green velvet curtains" },
-  { src: "/images/product-electric-curtain.jpg", alt: "Scandinavian bedroom with neutral bedding" },
-  { src: "/images/Liam Linen-1.avif", alt: "Luxurious interior featuring Liam Linen curtains" },
-  { src: "/images/community-curtains-demo.png", alt: "Sunlit scandinavian living room featuring breezy custom linen curtains" },
+  { src: "/Velourlux/images/product-shutters.jpg", alt: "Elegant traditional room with green velvet curtains" },
+  { src: "/Velourlux/images/product-electric-curtain.jpg", alt: "Scandinavian bedroom with neutral bedding" },
+  { src: "/Velourlux/images/Liam Linen-1.avif", alt: "Luxurious interior featuring Liam Linen curtains" },
+  { src: "/Velourlux/images/community-curtains-demo.png", alt: "Sunlit scandinavian living room featuring breezy custom linen curtains" },
 ];
 
 export default function CommunitySection() {

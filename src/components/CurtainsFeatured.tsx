@@ -22,7 +22,7 @@ export default function CurtainsFeatured() {
       <div className="curtains-grid">
         <div className="curtains-lifestyle">
           <Image
-            src="/images/Roman Shades-1.avif"
+            src="/Velourlux/images/Roman Shades-1.avif"
             alt="Elegant Roman shades in a sunlit modern room"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -33,7 +33,7 @@ export default function CurtainsFeatured() {
         <div className="curtains-product-col">
           <div className="curtains-product-isolated">
             <Image
-              src="/images/Roman Shades-2.avif"
+              src="/Velourlux/images/Roman Shades-2.avif"
               alt="Close-up detail of Roman Shades fabric"
               fill
               sizes="(max-width: 1024px) 100vw, 30vw"

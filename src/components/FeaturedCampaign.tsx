@@ -36,7 +36,7 @@ export default function FeaturedCampaign() {
 
         <div className="campaign-lifestyle">
           <Image
-            src="/images/Liam Linen-1.avif"
+            src="/Velourlux/images/Liam Linen-1.avif"
             alt="Luxurious interior featuring Liam Linen curtains"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -48,7 +48,7 @@ export default function FeaturedCampaign() {
           <div className="campaign-product-isolated">
             <div className="product-badge">NEW IN</div>
             <Image
-              src="/images/Liam Linen-2.avif"
+              src="/Velourlux/images/Liam Linen-2.avif"
               alt="Liam Linen fabric texture"
               fill
               sizes="(max-width: 1024px) 100vw, 30vw"

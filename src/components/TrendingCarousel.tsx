@@ -24,6 +24,7 @@ interface Product {
   type: string;
   price: string;
   image: string;
+  hoverImage?: string;
   tag?: string;
 }
 
@@ -56,8 +57,19 @@ export default function TrendingCarousel({
                   alt={product.name}
                   fill
                   sizes="(max-width: 640px) 75vw, (max-width: 1024px) 50vw, 25vw"
+                  className={product.hoverImage ? "product-image-primary" : ""}
                   style={{ objectFit: "cover" }}
                 />
+                {product.hoverImage && (
+                  <Image
+                    src={product.hoverImage}
+                    alt={`${product.name} hover view`}
+                    fill
+                    sizes="(max-width: 640px) 75vw, (max-width: 1024px) 50vw, 25vw"
+                    className="product-image-secondary"
+                    style={{ objectFit: "cover" }}
+                  />
+                )}
                 {product.tag && <span className="product-tag">{product.tag}</span>}
               </div>
               <div className="product-card-info">
