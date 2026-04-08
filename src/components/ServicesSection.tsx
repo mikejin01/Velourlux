@@ -3,34 +3,36 @@ import Link from "next/link";
 
 const services = [
   {
-    icon: "/Velourlux/icons/showroom.svg",
     title: "Explore Our Showrooms",
-    desc: "Join us at one of our 150+ locations across the country.",
+    desc: "Visit one of our 150+ locations across the country to see and feel our collections in person.",
+    image: "/Velourlux/images/store-front.jpg",
+    href: "#",
+    span: true,
+  },
+  {
+    title: "Free Measurement",
+    desc: "Our experts offer precise window measurements free of charge, ensuring a perfect fit for your custom curtains.",
+    image: "/Velourlux/images/measure.png",
     href: "#",
   },
   {
-    icon: "/Velourlux/icons/measurement.svg",
-    title: "Schedule a Free Measurement",
-    desc: "We'll come to you and provide complimentary on-site measuring.",
+    title: "Design Assistance",
+    desc: "Get one-on-one design guidance from the comfort of your home with our interior specialists.",
+    image: "/Velourlux/images/design.png",
     href: "#",
   },
   {
-    icon: "/Velourlux/icons/design.svg",
-    title: "Enjoy an In-Home Design Consult",
-    desc: "Get one-on-one design guidance from the comfort of your home.",
+    title: "Order Swatches",
+    desc: "Receive an assortment of our 20 most sought-after materials delivered to your door.",
+    image: "/Velourlux/images/swatches.png",
     href: "#",
   },
   {
-    icon: "/Velourlux/icons/swatches.svg",
-    title: "Order Most Popular Swatches",
-    desc: "Receive an assortment of our 20 most sought-after materials.",
-    href: "#",
-  },
-  {
-    icon: "/Velourlux/icons/installation.svg",
     title: "Professional Installation",
     desc: "Our certified installers ensure a flawless, worry-free fit for every window.",
+    image: "/Velourlux/images/install.png",
     href: "#",
+    span: true,
   },
 ];
 
@@ -38,24 +40,25 @@ export default function ServicesSection() {
   return (
     <section className="services-section">
       <h2 className="services-title">Let us help bring your vision to life.</h2>
-      <div className="services-grid">
+      <div className="services-bento">
         {services.map((item, i) => (
-          <Link href={item.href} className="service-card" key={i}>
-            <div className="service-card-icon">
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={72}
-                height={72}
-              />
+          <Link
+            href={item.href}
+            className={`bento-card${item.span ? " bento-span" : ""}`}
+            key={i}
+          >
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              sizes={item.span ? "(max-width: 640px) 100vw, 55vw" : "(max-width: 640px) 100vw, 28vw"}
+              style={{ objectFit: "cover" }}
+            />
+            <div className="bento-overlay" />
+            <div className="bento-content">
+              <h3 className="bento-title">{item.title}</h3>
+              <p className="bento-desc">{item.desc}</p>
             </div>
-            <h3 className="service-card-title">{item.title}</h3>
-            <p className="service-card-desc">{item.desc}</p>
-            <span className="service-card-arrow" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </span>
           </Link>
         ))}
       </div>

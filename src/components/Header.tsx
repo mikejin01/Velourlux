@@ -1,11 +1,41 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+const megaMenuData: Record<string, { featured: string[]; categories: string[]; image: string; imageLabel: string }> = {
+  Curtains: {
+    featured: ["New In", "Most Popular", "The Signature Look", "Find the Perfect Curtain"],
+    categories: ["Shop All", "Curtains by Type", "Curtains by Fabric", "Curtains by Color", "Curtains by Size", "Hardware", "Services"],
+    image: "/Velourlux/images/High Quality-1.avif",
+    imageLabel: "The Grand Curtains",
+  },
+  "Shades & Blinds": {
+    featured: ["New In", "Most Popular", "Roman Shades", "Roller Blinds"],
+    categories: ["Shop All", "Shades by Type", "Shades by Room", "Shades by Color", "Motorized Options", "Samples", "Guides"],
+    image: "/Velourlux/images/Roman Shades-1.avif",
+    imageLabel: "Roman Shades Collection",
+  },
+  Rugs: {
+    featured: ["New In", "Most Popular", "Handwoven Collection", "Best Sellers"],
+    categories: ["Shop All", "Rugs by Style", "Rugs by Material", "Rugs by Size", "Rugs by Color", "Rug Pads", "Care Guide"],
+    image: "/Velourlux/images/rugs/rug1-01.jpg",
+    imageLabel: "Handwoven Wool Rugs",
+  },
+  Hardware: {
+    featured: ["New In", "Most Popular", "Curtain Rods", "Complete Sets"],
+    categories: ["Shop All", "Rods & Poles", "Finials", "Brackets & Rings", "Tiebacks", "Tracks & Rails", "Installation Kits"],
+    image: "/Velourlux/images/curtain-closeup.png",
+    imageLabel: "Premium Hardware",
+  },
+};
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -22,18 +52,41 @@ export default function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  const handleNavEnter = (label: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveMenu(label);
+  };
+
+  const handleNavLeave = () => {
+    timeoutRef.current = setTimeout(() => setActiveMenu(null), 150);
+  };
+
+  const handleDropdownEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  };
+
+  const handleDropdownLeave = () => {
+    timeoutRef.current = setTimeout(() => setActiveMenu(null), 150);
+  };
+
   return (
-    <header className={`header${scrolled ? " scrolled" : ""}${menuOpen ? " menu-open" : ""}`}>
+    <header className={`header${scrolled ? " scrolled" : ""}${menuOpen ? " menu-open" : ""}${activeMenu ? " mega-active" : ""}`}>
       <div className="header-inner">
         <div className="header-left">
           <Link href="/" className="header-logo">
             VELOURLUX
           </Link>
           <nav className="header-nav">
-            <Link href="#">Curtains</Link>
-            <Link href="#">Shades &amp; Blinds</Link>
-            <Link href="#">Rugs</Link>
-            <Link href="#">Hardware</Link>
+            {Object.keys(megaMenuData).map((label) => (
+              <button
+                key={label}
+                className={`header-nav-item${activeMenu === label ? " active" : ""}`}
+                onMouseEnter={() => handleNavEnter(label)}
+                onMouseLeave={handleNavLeave}
+              >
+                {label}
+              </button>
+            ))}
           </nav>
         </div>
         <div className="header-right">
@@ -82,6 +135,45 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      {/* Mega Dropdown */}
+      {activeMenu && megaMenuData[activeMenu] && (
+        <div
+          className="mega-menu"
+          onMouseEnter={handleDropdownEnter}
+          onMouseLeave={handleDropdownLeave}
+        >
+          <div className="mega-menu-inner">
+            <div className="mega-menu-featured">
+              {megaMenuData[activeMenu].featured.map((item) => (
+                <Link key={item} href="#" className="mega-menu-featured-link">
+                  {item}
+                </Link>
+              ))}
+            </div>
+            <div className="mega-menu-categories">
+              {megaMenuData[activeMenu].categories.map((item) => (
+                <Link key={item} href="#" className="mega-menu-cat-link">
+                  {item}
+                </Link>
+              ))}
+            </div>
+            <div className="mega-menu-image">
+              <Image
+                src={megaMenuData[activeMenu].image}
+                alt={megaMenuData[activeMenu].imageLabel}
+                fill
+                sizes="40vw"
+                style={{ objectFit: "cover" }}
+              />
+              <p className="mega-menu-image-label">{megaMenuData[activeMenu].imageLabel}</p>
+            </div>
+          </div>
+          <p className="mega-menu-help">
+            Need help? <Link href="#">Contact</Link> our team.
+          </p>
+        </div>
+      )}
 
       <nav className={`mobile-menu${menuOpen ? " open" : ""}`}>
         <Link href="#" onClick={() => setMenuOpen(false)}>Curtains</Link>
