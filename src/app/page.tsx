@@ -7,8 +7,10 @@ import ValueProps from "@/components/ValueProps";
 import CurtainsFeatured from "@/components/CurtainsFeatured";
 import PressSection from "@/components/PressSection";
 import ServicesSection from "@/components/ServicesSection";
+import OurStory from "@/components/OurStory";
 import CommunitySection from "@/components/CommunitySection";
 import Footer from "@/components/Footer";
+import SignupPopup from "@/components/SignupPopup";
 
 const trendingCurtains = [
   {
@@ -93,11 +95,13 @@ export default function Home() {
           products={trendingRugs}
         />
         <CurtainsFeatured />
-        <PressSection />
         <ServicesSection />
+        <PressSection />
+        <OurStory />
         <CommunitySection />
       </main>
       <Footer />
+      <SignupPopup />
     </>
   );
 }

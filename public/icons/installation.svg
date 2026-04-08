@@ -1,0 +1,19 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curtain rod / bracket -->
+  <rect x="15" y="22" width="90" height="4" rx="2" fill="black"/>
+  <rect x="20" y="14" width="4" height="16" rx="1" fill="black"/>
+  <rect x="96" y="14" width="4" height="16" rx="1" fill="black"/>
+  <!-- Curtain panels hanging from rod -->
+  <path d="M22 26 C22 26 24 30 26 26 C28 22 30 30 32 26 C34 22 36 30 38 26 L38 72 C36 76 34 68 32 72 C30 76 28 68 26 72 C24 76 22 68 22 72 Z" fill="black" opacity="0.15"/>
+  <path d="M82 26 C82 26 84 30 86 26 C88 22 90 30 92 26 C94 22 96 30 98 26 L98 72 C96 76 94 68 92 72 C90 76 88 68 86 72 C84 76 82 68 82 72 Z" fill="black" opacity="0.15"/>
+  <!-- Wrench tool -->
+  <path d="M68 58 L54 72" stroke="black" stroke-width="3" stroke-linecap="round"/>
+  <path d="M72.5 53.5 C75.8 50.2 75.8 44.8 72.5 41.5 C70.2 39.2 66.8 38.5 63.8 39.5 L67 42.7 L67.5 47.5 L62.7 47 L59.5 43.8 C58.5 46.8 59.2 50.2 61.5 52.5 C64.8 55.8 70.2 55.8 73.5 52.5" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Screwdriver tool -->
+  <path d="M46 80 L56 70" stroke="black" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 86 L46 80" stroke="black" stroke-width="5" stroke-linecap="round"/>
+  <path d="M38 88 L40 86" stroke="black" stroke-width="3" stroke-linecap="round"/>
+  <!-- Drill holes / mounting points -->
+  <circle cx="20" cy="14" r="2" fill="black"/>
+  <circle cx="100" cy="14" r="2" fill="black"/>
+</svg>

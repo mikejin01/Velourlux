@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -12,8 +13,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   return (
-    <header className={`header${scrolled ? " scrolled" : ""}`}>
+    <header className={`header${scrolled ? " scrolled" : ""}${menuOpen ? " menu-open" : ""}`}>
       <div className="header-inner">
         <div className="header-left">
           <Link href="/" className="header-logo">
@@ -27,9 +37,8 @@ export default function Header() {
           </nav>
         </div>
         <div className="header-right">
-          <Link href="#">Inspiration</Link>
+          <Link href="#">Contact</Link>
           <Link href="#">About</Link>
-          <Link href="#">Help</Link>
           <div className="header-icons">
             <button aria-label="Search">
               <svg
@@ -45,9 +54,6 @@ export default function Header() {
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
             </button>
-            <span className="header-locale">
-              US | $
-            </span>
             <Link href="#" className="header-cart">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,9 +70,28 @@ export default function Header() {
               </svg>
               ( 0 )
             </Link>
+            <button
+              className="header-menu-toggle"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <span className="menu-toggle-bar" />
+              <span className="menu-toggle-bar" />
+              <span className="menu-toggle-bar" />
+            </button>
           </div>
         </div>
       </div>
+
+      <nav className={`mobile-menu${menuOpen ? " open" : ""}`}>
+        <Link href="#" onClick={() => setMenuOpen(false)}>Curtains</Link>
+        <Link href="#" onClick={() => setMenuOpen(false)}>Shades &amp; Blinds</Link>
+        <Link href="#" onClick={() => setMenuOpen(false)}>Rugs</Link>
+        <Link href="#" onClick={() => setMenuOpen(false)}>Hardware</Link>
+        <div className="mobile-menu-divider" />
+        <Link href="#" onClick={() => setMenuOpen(false)}>Contact</Link>
+        <Link href="#" onClick={() => setMenuOpen(false)}>About</Link>
+      </nav>
     </header>
   );
 }

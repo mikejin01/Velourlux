@@ -10,7 +10,7 @@ const services = [
   },
   {
     icon: "/Velourlux/icons/measurement.svg",
-    title: "Schedule a Window Measurement",
+    title: "Schedule a Free Measurement",
     desc: "We'll come to you and provide complimentary on-site measuring.",
     href: "#",
   },
@@ -24,6 +24,12 @@ const services = [
     icon: "/Velourlux/icons/swatches.svg",
     title: "Order Most Popular Swatches",
     desc: "Receive an assortment of our 20 most sought-after materials.",
+    href: "#",
+  },
+  {
+    icon: "/Velourlux/icons/installation.svg",
+    title: "Professional Installation",
+    desc: "Our certified installers ensure a flawless, worry-free fit for every window.",
     href: "#",
   },
 ];

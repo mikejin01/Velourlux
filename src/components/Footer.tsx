@@ -62,7 +62,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span className="footer-copyright">© VELOURLUX 2025</span>
+        <span className="footer-copyright">© VELOURLUX 2026</span>
         <div className="footer-payments">
           {/* Visa */}
           <span className="payment-icon-logo">
