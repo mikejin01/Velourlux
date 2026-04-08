@@ -926,11 +926,9 @@ h3 {
 
 .services-bento {
   display: grid;
-  grid-template-columns: 3fr 2fr 2fr;
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 340px 340px;
   gap: 12px;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .bento-card {
@@ -955,13 +953,17 @@ h3 {
 .bento-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.05) 60%, transparent 100%);
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.05) 60%, transparent 100%),
+    rgba(30, 25, 20, 0.18);
   z-index: 1;
   transition: background 0.4s ease;
 }
 
 .bento-card:hover .bento-overlay {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%),
+    rgba(30, 25, 20, 0.12);
 }
 
 .bento-content {
@@ -987,33 +989,34 @@ h3 {
   max-width: 320px;
 }
 
-.bento-span {
-  grid-column: span 1;
-}
 
 .bento-card:first-child {
-  grid-column: 1;
+  grid-column: 1 / span 2;
   grid-row: 1;
 }
 
 .bento-card:nth-child(2) {
-  grid-column: 2;
+  grid-column: 3 / span 2;
   grid-row: 1;
 }
 
 .bento-card:nth-child(3) {
-  grid-column: 3;
+  grid-column: 5 / span 2;
   grid-row: 1;
 }
 
 .bento-card:nth-child(4) {
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 3;
   grid-row: 2;
 }
 
 .bento-card:nth-child(5) {
-  grid-column: 3;
+  grid-column: 4 / span 3;
   grid-row: 2;
+}
+
+.bento-card:nth-child(5) img {
+  object-position: center 20%;
 }
 
 /* ===== OUR STORY ===== */
@@ -1029,15 +1032,17 @@ h3 {
   text-transform: none;
   letter-spacing: -0.01em;
   margin-bottom: 48px;
+  padding: 0 24px;
   color: #000;
 }
 
 .our-story-image {
   position: relative;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto 48px;
-  aspect-ratio: 16 / 6;
+  height: calc(100vh - 460px);
+  min-height: 240px;
+  max-height: 500px;
+  margin-bottom: 48px;
   overflow: hidden;
 }
 
@@ -1053,6 +1058,7 @@ h3 {
   gap: 48px;
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 24px;
   align-items: start;
 }
 
@@ -1561,7 +1567,7 @@ h3 {
 
   /* --- Services --- */
   .services-section {
-    padding: 48px 16px 60px;
+    padding: 48px 0 60px;
   }
 
   .services-title {
@@ -1601,7 +1607,7 @@ h3 {
 
   /* --- Our Story --- */
   .our-story {
-    padding: 60px 4% 72px;
+    padding: 48px 16px 60px;
   }
 
   .our-story-title {
@@ -1609,6 +1615,9 @@ h3 {
   }
 
   .our-story-image {
+    height: auto;
+    min-height: unset;
+    max-height: unset;
     aspect-ratio: 16 / 8;
     margin-bottom: 40px;
   }
@@ -1776,7 +1785,7 @@ h3 {
 
   /* --- Services --- */
   .services-section {
-    padding: 40px 16px 48px;
+    padding: 40px 0 48px;
   }
 
   .services-title {
@@ -1800,7 +1809,7 @@ h3 {
 
   /* --- Our Story --- */
   .our-story {
-    padding: 48px 20px 60px;
+    padding: 40px 20px 48px;
   }
 
   .our-story-title {
@@ -1808,6 +1817,9 @@ h3 {
   }
 
   .our-story-image {
+    height: auto;
+    min-height: unset;
+    max-height: unset;
     aspect-ratio: 16 / 10;
     margin-bottom: 32px;
   }

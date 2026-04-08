@@ -5,9 +5,8 @@ const services = [
   {
     title: "Explore Our Showrooms",
     desc: "Visit one of our 150+ locations across the country to see and feel our collections in person.",
-    image: "/Velourlux/images/store-front.jpg",
+    image: "/Velourlux/images/showroom.png",
     href: "#",
-    span: true,
   },
   {
     title: "Free Measurement",
@@ -32,7 +31,6 @@ const services = [
     desc: "Our certified installers ensure a flawless, worry-free fit for every window.",
     image: "/Velourlux/images/install.png",
     href: "#",
-    span: true,
   },
 ];
 
@@ -44,14 +42,14 @@ export default function ServicesSection() {
         {services.map((item, i) => (
           <Link
             href={item.href}
-            className={`bento-card${item.span ? " bento-span" : ""}`}
+            className="bento-card"
             key={i}
           >
             <Image
               src={item.image}
               alt={item.title}
               fill
-              sizes={item.span ? "(max-width: 640px) 100vw, 55vw" : "(max-width: 640px) 100vw, 28vw"}
+              sizes="(max-width: 640px) 100vw, 33vw"
               style={{ objectFit: "cover" }}
             />
             <div className="bento-overlay" />
