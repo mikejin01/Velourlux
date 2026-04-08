@@ -1,23 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
-
-const ArrowIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <line x1="5" y1="12" x2="19" y2="12" />
-    <polyline points="12 5 19 12 12 19" />
-  </svg>
-);
+import ArrowIcon from "@/components/icons/ArrowIcon";
 
 interface Product {
   name: string;
@@ -37,8 +20,6 @@ export default function TrendingCarousel({
   title,
   products,
 }: TrendingCarouselProps) {
-  const trackRef = useRef<HTMLDivElement>(null);
-
   return (
     <section className="trending-section">
       <div className="section-header">
@@ -48,7 +29,7 @@ export default function TrendingCarousel({
         </Link>
       </div>
       <div className="carousel-wrapper">
-        <div className="carousel-track" ref={trackRef}>
+        <div className="carousel-track">
           {products.map((product, i) => (
             <article className="product-card" key={i}>
               <div className="product-card-image">

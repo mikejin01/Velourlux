@@ -22,6 +22,7 @@ export default function Header() {
           <nav className="header-nav">
             <Link href="#">Curtains</Link>
             <Link href="#">Shades &amp; Blinds</Link>
+            <Link href="#">Rugs</Link>
             <Link href="#">Hardware</Link>
           </nav>
         </div>
@@ -44,19 +45,10 @@ export default function Header() {
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
             </button>
-            <span style={{ fontSize: "0.8125rem", fontWeight: 500 }}>
+            <span className="header-locale">
               US | $
             </span>
-            <Link
-              href="#"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                fontSize: "0.8125rem",
-                fontWeight: 500,
-              }}
-            >
+            <Link href="#" className="header-cart">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

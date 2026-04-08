@@ -3,8 +3,10 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrendingCarousel from "@/components/TrendingCarousel";
 import FeaturedCampaign from "@/components/FeaturedCampaign";
+import ValueProps from "@/components/ValueProps";
 import CurtainsFeatured from "@/components/CurtainsFeatured";
 import PressSection from "@/components/PressSection";
+import ServicesSection from "@/components/ServicesSection";
 import CommunitySection from "@/components/CommunitySection";
 import Footer from "@/components/Footer";
 
@@ -43,36 +45,36 @@ const trendingCurtains = [
   },
 ];
 
-const trendingShadesData = [
-  {
-    name: "Classic Beige Shades",
-    type: "Premium Roman Blinds",
-    price: "$295.00",
-    image: "/Velourlux/images/shades-blinds-demo.png",
-  },
+const trendingRugs = [
   {
     name: "Indore – Terracotta",
     type: "Handwoven Wool Rug",
     price: "$1,495.00",
-    image: "/Velourlux/images/product-shutters.jpg",
-  },
-  {
-    name: "Desert – Earth",
-    type: "Flatweave Jute & Wool Rug",
-    price: "$395.00",
-    image: "/Velourlux/images/Electric Rolling Curtain-1.avif",
-  },
-  {
-    name: "Velvet Royal – Wine",
-    type: "Premium Velvet Curtain",
-    price: "$285.00",
-    image: "/Velourlux/images/High Quality-1.avif",
+    image: "/Velourlux/images/rugs/rug1-01.jpg",
+    hoverImage: "/Velourlux/images/rugs/rug1-02.jpg",
+    tag: "NEW IN",
   },
   {
     name: "Normandie – Ochre",
-    type: "Geometric Handwoven Rug",
-    price: "$1,495.00",
-    image: "/Velourlux/images/Electric Rolling Curtain-1.avif",
+    type: "Geometric Flatweave Rug",
+    price: "$895.00",
+    image: "/Velourlux/images/rugs/rug2-01.jpg",
+    hoverImage: "/Velourlux/images/rugs/rug2-02.jpg",
+    tag: "NEW IN",
+  },
+  {
+    name: "Sahara – Natural",
+    type: "Jute & Cotton Blend Rug",
+    price: "$650.00",
+    image: "/Velourlux/images/rugs/rug3-01.jpg",
+    hoverImage: "/Velourlux/images/rugs/rug3-02.webp",
+  },
+  {
+    name: "Maison – Ivory",
+    type: "Hand-Tufted Wool Rug",
+    price: "$1,250.00",
+    image: "/Velourlux/images/rugs/rug4-01.jpg",
+    hoverImage: "/Velourlux/images/rugs/rug4-02.webp",
   },
 ];
 
@@ -85,12 +87,14 @@ export default function Home() {
         <Hero />
         <TrendingCarousel title="TRENDING CURTAINS" products={trendingCurtains} />
         <FeaturedCampaign />
+        <ValueProps />
         <TrendingCarousel
-          title="TRENDING SHADES & BLINDS"
-          products={trendingShadesData}
+          title="TRENDING RUGS"
+          products={trendingRugs}
         />
         <CurtainsFeatured />
         <PressSection />
+        <ServicesSection />
         <CommunitySection />
       </main>
       <Footer />
