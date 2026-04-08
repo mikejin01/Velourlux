@@ -7,7 +7,7 @@ export default function SignupPopup() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 4000);
+    const timer = setTimeout(() => setOpen(true), 500);
     return () => clearTimeout(timer);
   }, []);
 
